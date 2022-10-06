@@ -28,8 +28,13 @@ func main() {
 	//}
 
 	// to repeat the routines
-	for {
-		go checkLink(<-c, c)
+	//for {
+	//go checkLink(<-c, c)
+	//}
+
+	//for developers to understand the code and have a clear understanding
+	for l := range c {
+		go checkLink(l, c)
 	}
 
 }
